@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', 'Courier', monospace;
+    background: #f5f1e8;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#container {
+    background: #f9f6f0;
+    border: 3px solid #8b7355;
+    border-radius: 5px;
+    box-shadow: 
+        inset 0 1px 0 rgba(255, 255, 255, 0.6),
+        0 15px 35px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    background-image: 
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 2px,
+            rgba(139, 115, 85, 0.03) 2px,
+            rgba(139, 115, 85, 0.03) 4px
+        );
+}
+
+h1 {
+    color: #2d2416;
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.1);
+    letter-spacing: 2px;
+}
+
+.input-container {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+#tarefa-input {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #8b7355;
+    border-radius: 3px;
+    font-size: 16px;
+    font-family: 'Courier New', 'Courier', monospace;
+    background: #fffef9;
+    color: #2d2416;
+    transition: all 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+#tarefa-input:focus {
+    outline: none;
+    border-color: #d4a574;
+    box-shadow: 
+        inset 0 1px 3px rgba(0, 0, 0, 0.1),
+        0 0 0 3px rgba(212, 165, 116, 0.2);
+    background: #fffef9;
+}
+
+#adicionar-btn {
+    padding: 12px 30px;
+    background: #8b7355;
+    color: #f9f6f0;
+    border: 2px solid #5a4a3a;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: 'Courier New', 'Courier', monospace;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#adicionar-btn:hover {
+    background: #a0906a;
+    transform: translateX(-2px);
+    text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.3);
+}
+
+#adicionar-btn:active {
+    transform: translateX(0);
+    background: #7a6a4a;
+}
+
+#lista-tarefas {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+#lista-tarefas li {
+    background: #fffef9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid #d4a87a;
+    box-shadow: 2px 2px 0px rgba(0, 0, 0, 0.05);
+}
+
+#lista-tarefas li:hover {
+    background: #fff9f0;
+    transform: translateX(3px) translateY(-1px);
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, 0.08);
+    border-color: #8b7355;
+}
+
+.tarefa-conteudo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.tarefa-checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: #8b7355;
+    border-radius: 2px;
+}
+
+.tarefa-texto {
+    color: #2d2416;
+    font-size: 16px;
+    font-family: 'Courier New', 'Courier', monospace;
+    user-select: none;
+    word-break: break-word;
+    letter-spacing: 0.5px;
+}
+
+li.concluida .tarefa-texto {
+    text-decoration: line-through;
+    color: #8b8b7a;
+    opacity: 0.7;
+}
+
+li.concluida {
+    background: #f0ebe0;
+    border-color: #c4b5a0;
+    opacity: 0.75;
+}
+
+.dica {
+    text-align: center;
+    color: #8b7355;
+    font-size: 14px;
+    margin-top: 20px;
+    font-family: 'Courier New', 'Courier', monospace;
+    letter-spacing: 0.5px;
+}
+
+#lista-tarefas:empty + .dica::before {
+    content: 'Nenhuma tarefa adicionada ainda. ';
+}
+
+@media (max-width: 600px) {
+    #container {
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    
+    .input-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    #tarefa-input,
+    #adicionar-btn {
+        width: 100%;
+    }
+}
