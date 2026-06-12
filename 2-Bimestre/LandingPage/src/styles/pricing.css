@@ -15,8 +15,8 @@
     background-color: var(--card-bg);
     border-radius: 16px;
     padding: 3rem 2.25rem;
-    border: 1px solid rgba(197, 168, 90, 0.1);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 136, 255, 0.15);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
     transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     display: flex;
@@ -26,13 +26,13 @@
 
 .tier-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(197, 168, 90, 0.08);
+    box-shadow: 0 10px 30px rgba(0, 136, 255, 0.15);
 }
 
 /* Serafim (Destacado) */
 .tier-card.featured {
     border: 2px solid var(--primary-color);
-    box-shadow: 0 10px 35px rgba(197, 168, 90, 0.15);
+    box-shadow: 0 10px 35px rgba(0, 136, 255, 0.3);
     padding-block: 4rem 3.5rem;
     transform: scale(1.03);
     z-index: 10;
@@ -40,7 +40,7 @@
 
 .tier-card.featured:hover {
     transform: scale(1.03) translateY(-5px);
-    box-shadow: 0 15px 40px rgba(197, 168, 90, 0.22);
+    box-shadow: 0 15px 40px rgba(0, 136, 255, 0.45);
 }
 
 .featured-badge {
@@ -57,7 +57,7 @@
     text-transform: uppercase;
     padding: 0.4rem 1.5rem;
     border-radius: 20px;
-    box-shadow: 0 4px 10px rgba(197, 168, 90, 0.3);
+    box-shadow: 0 4px 10px rgba(0, 136, 255, 0.4);
     white-space: nowrap;
 }
 

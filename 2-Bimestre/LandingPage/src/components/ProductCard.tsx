@@ -1,11 +1,11 @@
-interface ILoteCardProps {
+interface IProductCardProps {
     image: string;
     title: string;
     desc: string;
     price: string;
 }
 
-export default function LoteCard({ image, title, desc, price }: ILoteCardProps) {
+export default function ProductCard({ image, title, desc, price }: IProductCardProps) {
     return (
         <article className="portfolio-card">
             <div className="portfolio-img-container">

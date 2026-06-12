@@ -22,7 +22,7 @@
     border-color: var(--primary-hover);
     color: var(--light-text-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(197, 168, 90, 0.2);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.4);
 }
 
 .btn-secondary {
@@ -48,5 +48,5 @@
     background: var(--primary-color);
     color: var(--light-text-color);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(197, 168, 90, 0.1);
+    box-shadow: 0 0 15px rgba(0, 136, 255, 0.3);
 }

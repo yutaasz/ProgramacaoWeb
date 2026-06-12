@@ -3,7 +3,7 @@
     color: var(--light-text-color);
     padding-block: 5rem 3.5rem;
     text-align: center;
-    border-top: 1px solid rgba(197, 168, 90, 0.15);
+    border-top: 1px solid rgba(0, 136, 255, 0.15);
 }
 
 .footer-container {
@@ -21,19 +21,11 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     position: relative;
-    text-shadow: 0 0 15px rgba(197, 168, 90, 0.3);
+    text-shadow: 0 0 15px rgba(0, 136, 255, 0.3);
 }
 
-.footer-logo::after {
-    content: "";
-    position: absolute;
-    width: 6px;
-    height: 6px;
-    background-color: var(--primary-color);
-    bottom: 8px;
-    right: -10px;
-    border-radius: 50%;
-    box-shadow: 0 0 8px var(--primary-color);
+.footer-logo span {
+    color: var(--primary-color);
 }
 
 .footer-links {
@@ -58,7 +50,7 @@
 
 .footer-links a:hover {
     color: var(--primary-color);
-    text-shadow: 0 0 8px rgba(197, 168, 90, 0.3);
+    text-shadow: 0 0 8px rgba(0, 136, 255, 0.3);
 }
 
 .footer-slogan {

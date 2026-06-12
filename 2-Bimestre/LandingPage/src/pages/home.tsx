@@ -1,309 +1,231 @@
 import { useState } from "react";
 import Button from "../components/Button";
-import LoteCard from "../components/LoteCard";
+import ProductCard from "../components/ProductCard";
 import TierCard from "../components/TierCard";
 import TestimonialCard from "../components/TestimonialCard";
-
-import Close from "../assets/close.svg";
-import Menu from "../assets/menu.svg";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 // Importação das Imagens Geradas por IA
-import SilverLining from "../assets/silver_lining.png";
-import GoldenMeadow from "../assets/golden_meadow.png";
-import AzureSanctum from "../assets/azure_sanctum.png";
+import HdProIndoor from "../assets/hd_pro_indoor.png";
+import LumixOutdoor from "../assets/lumix_outdoor.png";
+import ApexCreative from "../assets/apex_creative.png";
 
 // Importação das Folhas de Estilo Modulares
 import "../styles/header.css";
 import "../styles/utility.css";
 import "../styles/hero.css";
-import "../styles/portfolio.css";
-import "../styles/tiers.css";
-import "../styles/voices.css";
-import "../styles/inquiry.css";
+import "../styles/products.css";
+import "../styles/pricing.css";
+import "../styles/testimonials.css";
+import "../styles/quote.css";
 import "../styles/footer.css";
 
 export default function Home() {
-    const [showMobileMenu, setShowMobileMenu] = useState(false);
     const [selectedTier, setSelectedTier] = useState("seraphim");
 
     // Lógica simples de submissão do formulário
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        alert("Petição enviada ao Firmamento. Aguarde o sinal de purificação.");
+        alert("Solicitação de orçamento enviada com sucesso! Nossa equipe entrará em contato em breve.");
     };
 
     return (
         <>
             {/* 1. Cabeçalho (Navbar) */}
-            <header className="header-nav">
-                <div className="container header-container flex items-center justify-between">
-                    <a href="#" className="logo-text">Hell'sGate</a>
-
-                    <div className="desktop-only">
-                        <ul className="nav-links flex gap-2">
-                            <li>
-                                <a href="#firmament">O Firmamento</a>
-                            </li>
-                            <li>
-                                <a href="#plans">Planos de Ascensão</a>
-                            </li>
-                            <li>
-                                <a href="#vision" className="active">Nossa Visão</a>
-                            </li>
-                            <li>
-                                <a href="#inquiry">Inquérito</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div className="desktop-only">
-                        <a href="#inquiry">
-                            <Button text="ASCENDER AGORA" />
-                        </a>
-                    </div>
-
-                    <div className="mobile-menu">
-                        {showMobileMenu ? (
-                            <div className="mobile-menu-content">
-                                <div className="container flex mobile-nav-container">
-                                    <span onClick={() => setShowMobileMenu(false)} className="btn-wrapper close-btn">
-                                        <img src={Close} alt="ícone fechar menu" width={24} height={24} />
-                                    </span>
-                                    <ul className="flex flex-column gap-2">
-                                        <li>
-                                            <a href="#firmament" onClick={() => setShowMobileMenu(false)}>O Firmamento</a>
-                                        </li>
-                                        <li>
-                                            <a href="#plans" onClick={() => setShowMobileMenu(false)}>Planos de Ascensão</a>
-                                        </li>
-                                        <li>
-                                            <a href="#vision" onClick={() => setShowMobileMenu(false)}>Nossa Visão</a>
-                                        </li>
-                                        <li>
-                                            <a href="#inquiry" onClick={() => setShowMobileMenu(false)}>Inquérito</a>
-                                        </li>
-                                        <li className="mt-lg">
-                                            <a href="#inquiry" onClick={() => setShowMobileMenu(false)}>
-                                                <Button text="ASCENDER AGORA" />
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        ) : (
-                            <span onClick={() => setShowMobileMenu(true)} className="btn-wrapper">
-                                <img src={Menu} alt="ícone menu" width={24} height={24} />
-                            </span>
-                        )}
-                    </div>
-                </div>
-            </header>
+            <Header />
 
             {/* 2. Hero Section */}
             <section className="hero-section" id="vision">
                 <div className="hero-content">
-                    <span className="hero-subtitle">A Culminação Suprema</span>
-                    <h1 className="hero-title">ASCENDA PARA O SEU PEDAÇO DA ETERNIDADE</h1>
+                    <span className="hero-subtitle">Tecnologia Visual de Ponta</span>
+                    <h1 className="hero-title">IMPACTO VISUAL EXTRAORDINÁRIO PARA SEU NEGÓCIO</h1>
                     <p className="hero-desc">
-                        Deixe o terrestre para trás. Garanta o seu santuário entre as estrelas no empreendimento celestial mais exclusivo já concebido.
+                        Eleve a experiência do seu público. Painéis de LED de alta performance com brilho extremo, contraste incrível e durabilidade incomparável para eventos, igrejas e varejo.
                     </p>
                     <div className="hero-buttons">
                         <a href="#lotes">
-                            <Button text="Ver Lotes Celestiais" />
+                            <Button text="Ver Nossos Painéis" />
                         </a>
                         <a href="#plans">
-                            <Button text="O Portfólio Celestial" secondary />
+                            <Button text="Soluções Corporativas" secondary />
                         </a>
                     </div>
                     <a href="#lotes" className="hero-arrow" aria-label="Rolar para baixo">
                         <svg viewBox="0 0 24 24">
-                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/>
+                            <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z" />
                         </svg>
                     </a>
                 </div>
             </section>
 
-            {/* 3. Lotes Celestiais (Portfolio) */}
+            {/* 3. Portfólio de Soluções (Portfolio) */}
             <main className="container py-xl" id="firmament">
                 <section id="lotes">
                     <div className="section-title-wrapper">
-                        <h2 className="section-title">O Portfólio Celestial</h2>
-                        <span className="section-subtitle">Nossos lotes de habitação celestial à sua escolha</span>
+                        <h2 className="section-title">Soluções em Painéis de LED</h2>
+                        <span className="section-subtitle">Encontre o modelo de tela de LED ideal para o seu projeto</span>
                     </div>
 
                     <div className="portfolio-grid">
-                        <LoteCard 
-                            image={SilverLining}
-                            title="O Lado Iluminado"
-                            desc="Uma estrutura minimalista nas nuvens mais altas, oferecendo silêncio e reflexão incomparáveis."
-                            price="50.000 Almas"
+                        <ProductCard
+                            image={HdProIndoor}
+                            title="Série HD-Pro (Indoor)"
+                            desc="Painéis de altíssima definição com pixel pitch ultra reduzido. Perfeito para estúdios de gravação, igrejas, auditórios e salas de controle."
+                            price="R$ 4.500/m²"
                         />
-                        <LoteCard 
-                            image={GoldenMeadow}
-                            title="O Prado Dourado"
-                            desc="Vastas extensões de luz onde o sol nunca se põe. O ápice do anseio terrestre."
-                            price="75.000 Almas"
+                        <ProductCard
+                            image={LumixOutdoor}
+                            title="Série Lumix (Outdoor)"
+                            desc="Painéis de alto brilho para publicidade externa e fachadas. Proteção IP65 contra intempéries e visualização perfeita mesmo sob luz solar direta."
+                            price="R$ 6.200/m²"
                         />
-                        <LoteCard 
-                            image={AzureSanctum}
-                            title="O Santuário Azure"
-                            desc="Nas profundezas do azul celestial, um canto privado do universo para contemplação profunda."
-                            price="250.000 Almas"
+                        <ProductCard
+                            image={ApexCreative}
+                            title="Série Apex Creative"
+                            desc="Formatos especiais, painéis de LED curvos, cilíndricos e telas transparentes de alta tecnologia. Crie experiências visuais imersivas sob medida."
+                            price="R$ 8.900/m²"
                         />
                     </div>
                 </section>
 
-                {/* 4. Limiar Celestial */}
-                <section className="threshold-section">
-                    <h3 className="threshold-title">Limiar Celestial</h3>
-                    <div className="threshold-labels">
-                        <span>O Terrestre</span>
-                        <span className="threshold-center">72% PURIFICADO</span>
-                        <span>O Divino</span>
-                    </div>
-                    <div className="threshold-bar-container">
-                        <div className="threshold-bar-fill"></div>
-                    </div>
-                    <p className="threshold-sub">
-                        Progresso de ascensão global em direção à Grande Abertura
-                    </p>
-                </section>
+
             </main>
 
-            {/* 5. Planos de Ascensão */}
+            {/* 5. Planos de Aquisição */}
             <section className="tiers-section" id="plans">
                 <div className="container">
                     <div className="section-title-wrapper">
-                        <h2 className="section-title">Planos de Ascensão</h2>
-                        <span className="section-subtitle">Escolha seu plano de Ascensão para personalizar seu pedaço de eternidade.</span>
+                        <h2 className="section-title">Modelos de Aquisição</h2>
+                        <span className="section-subtitle">Escolha o plano de contratação ideal para a demanda da sua empresa.</span>
                     </div>
 
                     <div className="tiers-grid">
-                        <TierCard 
-                            name="Neófito"
-                            tagline="Entrada nas Nuvens"
-                            price="50"
-                            suffix="/ em almas"
+                        <TierCard
+                            name="Essencial"
+                            tagline="Para Pequenos Negócios"
+                            price="290"
+                            suffix="/ m² (Locação)"
                             features={[
-                                "Acesso à superfície das nuvens",
-                                "Comodidades espirituais compartilhadas",
-                                "Instruções de constelação"
+                                "Painéis de LED de 3.9mm",
+                                "Suporte técnico em horário comercial",
+                                "Garantia de 1 ano contra defeitos"
                             ]}
-                            buttonText="Iniciar Ascensão"
+                            buttonText="Solicitar Cotação"
                         />
-                        <TierCard 
-                            name="Serafim"
-                            tagline="Propriedade Celestial Premium"
-                            price="500"
-                            suffix="/ em almas"
+                        <TierCard
+                            name="Pro"
+                            tagline="Para Grandes Eventos"
+                            price="450"
+                            suffix="/ m² (Locação)"
                             features={[
-                                "Flutuação nuvem privada",
-                                "Captação de luz eterna",
-                                "Mordomo Serafim dedicado",
-                                "Manutenção de auréola 24/7"
+                                "Painéis de LED de 2.6mm Premium",
+                                "Calibração de color avançada inclusa",
+                                "Suporte técnico emergencial 24/7",
+                                "Garantia estendida de 3 anos"
                             ]}
-                            buttonText="Garantir Seu Lote"
+                            buttonText="Garantir Solução Pro"
                             featured
                         />
-                        <TierCard 
-                            name="Divindade"
-                            tagline="Senhorio sobre Constelações"
-                            price="P.O.A."
-                            suffix="/ eternidade"
+                        <TierCard
+                            name="Corporate Custom"
+                            tagline="Sob Medida"
+                            price="Consultar"
+                            suffix="/ sob demanda"
                             features={[
-                                "Soberania total sobre constelações",
-                                "Direito de portal de atmosfera",
-                                "Subsídio de manifestação eterna"
+                                "Formatos curvos, esféricos ou flexíveis",
+                                "Integração com software de automação",
+                                "Consultoria de engenharia audiovisual"
                             ]}
-                            buttonText="Contato Direto"
+                            buttonText="Falar com Engenheiro"
                         />
                     </div>
                 </div>
             </section>
 
-            {/* 6. Depoimentos (Vozes do Firmamento) */}
+            {/* 6. Depoimentos (Casos de Sucesso) */}
             <section className="voices-section">
                 <div className="container">
                     <div className="section-title-wrapper">
-                        <h2 className="section-title">Vozes do Firmamento</h2>
-                        <span className="section-subtitle">Relatos reais das almas que já garantiram sua ascensão</span>
+                        <h2 className="section-title">Histórias de Sucesso</h2>
+                        <span className="section-subtitle">O que dizem os clientes que transformaram seus espaços com a NexVision</span>
                     </div>
 
                     <div className="voices-grid">
-                        <TestimonialCard 
-                            text="&ldquo;A transição foi sem esforço. Minha família está agora abençoada com um lar celestial eterno, exatamente como prometido.&rdquo;"
-                            author="Dr. THIAGO PAZ MILHOM"
-                            role="Ascendido em 7600.D.C"
-                            avatar="TM"
+                        <TestimonialCard
+                            text="&ldquo;A instalação dos painéis de LED HD-Pro na nossa igreja transformou completamente a experiência do público nos cultos. O brilho e a nitidez são impressionantes.&rdquo;"
+                            author="Pastor Ricardo Menezes"
+                            role="Diretor Geral da Catedral da Esperança"
+                            avatar="RM"
                         />
-                        <TestimonialCard 
-                            text="&ldquo;A princípio foi desafiador se acostumar à luz, mas logo percebi que esta era a paz que buscava. Maravilhoso.&rdquo;"
-                            author="Lady Seraphina"
-                            role="Ascendida em 8192.D.C"
-                            avatar="LS"
+                        <TestimonialCard
+                            text="&ldquo;Os painéis da série Lumix Outdoor resistiram a fortes chuvas e ventos sem perder qualidade visual. O retorno sobre o investimento publicitário foi excelente.&rdquo;"
+                            author="Fernanda Costa"
+                            role="Diretora de Marketing da Target Mídia"
+                            avatar="FC"
                         />
                     </div>
                 </div>
             </section>
 
-            {/* 7. Formulário de Consulta (Inicie sua Consulta) */}
+            {/* 7. Formulário de Cotação (Solicite um Orçamento) */}
             <section className="inquiry-section" id="inquiry">
                 <div className="container">
                     <div className="section-title-wrapper">
-                        <h2 className="section-title">Inicie sua Consulta</h2>
-                        <span className="section-subtitle">Consulte um Agente de Ascensão para personalizar seu pedaço de eternidade.</span>
+                        <h2 className="section-title">Solicite um Orçamento</h2>
+                        <span className="section-subtitle">Nossa equipe técnica elaborará uma proposta sob medida para sua necessidade visual.</span>
                     </div>
 
                     <div className="inquiry-card">
                         <form className="inquiry-form" onSubmit={handleSubmit}>
                             <div className="form-row-2">
                                 <div className="form-group">
-                                    <label htmlFor="soul-name" className="form-label">Nome Completo da Alma</label>
-                                    <input 
-                                        type="text" 
-                                        id="soul-name" 
-                                        className="form-input" 
-                                        placeholder="Ex: João da Silva" 
-                                        required 
+                                    <label htmlFor="soul-name" className="form-label">Nome Completo</label>
+                                    <input
+                                        type="text"
+                                        id="soul-name"
+                                        className="form-input"
+                                        placeholder="Ex: João da Silva"
+                                        required
                                     />
                                 </div>
                                 <div className="form-group">
-                                    <label htmlFor="email" className="form-label">Coordenadas Terrestres Atuais (E-mail)</label>
-                                    <input 
-                                        type="email" 
-                                        id="email" 
-                                        className="form-input" 
-                                        placeholder="Ex: joao@terra.com" 
-                                        required 
+                                    <label htmlFor="email" className="form-label">E-mail Corporativo</label>
+                                    <input
+                                        type="email"
+                                        id="email"
+                                        className="form-input"
+                                        placeholder="Ex: joao@empresa.com"
+                                        required
                                     />
                                 </div>
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="tier-select" className="form-label">Nível de Ascensão Alvo</label>
-                                <select 
-                                    id="tier-select" 
-                                    className="form-select" 
+                                <label htmlFor="tier-select" className="form-label">Linha de Painéis Desejada</label>
+                                <select
+                                    id="tier-select"
+                                    className="form-select"
                                     value={selectedTier}
                                     onChange={(e) => setSelectedTier(e.target.value)}
                                 >
-                                    <option value="neophyte">Neófito (50 Almas)</option>
-                                    <option value="seraphim">Serafim (500 Almas)</option>
-                                    <option value="deity">Divindade (P.O.A.)</option>
+                                    <option value="neophyte">Série HD-Pro (Indoor)</option>
+                                    <option value="seraphim">Série Lumix (Outdoor)</option>
+                                    <option value="deity">Série Apex Creative (Custom)</option>
                                 </select>
                             </div>
 
                             <div className="form-group">
-                                <label htmlFor="requests" className="form-label">Pedidos Especiais para o Santuário Eterno (Opcional)</label>
-                                <textarea 
-                                    id="requests" 
-                                    className="form-textarea" 
-                                    placeholder="Descreva particularidades como temperatura constante, espectro de luz customizado ou proximidade com constelações..."
+                                <label htmlFor="requests" className="form-label">Detalhes do seu Projeto (Opcional)</label>
+                                <textarea
+                                    id="requests"
+                                    className="form-textarea"
+                                    placeholder="Descreva a finalidade do painel, dimensões estimadas, local de instalação ou outras necessidades específicas..."
                                 ></textarea>
                             </div>
 
                             <div className="form-submit-container">
-                                <Button text="Enviar Petição" />
+                                <Button text="Enviar Solicitação" />
                             </div>
                         </form>
                     </div>
@@ -311,43 +233,7 @@ export default function Home() {
             </section>
 
             {/* 8. Rodapé (Footer) */}
-            <footer className="footer-section">
-                <div className="container footer-container">
-                    <span className="footer-logo">Hell'sGate</span>
-                    
-                    <ul className="footer-links">
-                        <li><a href="#vision">Termos Sagrados</a></li>
-                        <li><a href="#firmament">Pacto do Firmamento</a></li>
-                        <li><a href="#plans">Mapa Celestial</a></li>
-                    </ul>
-
-                    <p className="footer-slogan">
-                        O AMANHÃ HELL'S GATE. TRANSCENDENDO O TERRESTRE.
-                    </p>
-
-                    <div className="footer-socials">
-                        <a href="#" className="footer-icon-link" aria-label="Constelações">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
-                            </svg>
-                        </a>
-                        <a href="#" className="footer-icon-link" aria-label="Nuvens">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z"/>
-                            </svg>
-                        </a>
-                        <a href="#" className="footer-icon-link" aria-label="Portais">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12.65 10C11.83 7.67 9.61 6 7 6c-3.31 0-6 2.69-6 6s2.69 6 6 6c2.61 0 4.83-1.67 5.65-4H17v4h4v-4h2v-4H12.65zM7 14c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-                            </svg>
-                        </a>
-                    </div>
-
-                    <span className="footer-copyright">
-                        &copy; 2026 Hell'sGate. Desenvolvido para a eternidade.
-                    </span>
-                </div>
-            </footer>
+            <Footer />
         </>
     );
 }

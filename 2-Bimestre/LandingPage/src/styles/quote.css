@@ -7,8 +7,8 @@
     background-color: var(--card-bg);
     border-radius: 20px;
     padding: 4rem 3.5rem;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
-    border: 1px solid rgba(197, 168, 90, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(0, 136, 255, 0.15);
     max-width: 850px;
     margin-inline: auto;
 }
@@ -40,9 +40,14 @@
     padding: 0.75rem 0.5rem;
     background-color: transparent;
     border: none;
-    border-bottom: 1px solid #CBD5E1;
+    border-bottom: 1px solid #334155;
     outline: none;
     transition: all 0.3s ease;
+}
+
+.form-select option {
+    background-color: var(--card-bg);
+    color: var(--text-color);
 }
 
 .form-input::placeholder, .form-select::placeholder, .form-textarea::placeholder {
@@ -68,9 +73,10 @@
 .form-textarea {
     resize: none;
     height: 100px;
-    border: 1px solid #CBD5E1;
+    border: 1px solid #334155;
     border-radius: 6px;
     padding: 0.75rem 1rem;
+    background-color: transparent;
 }
 
 .form-textarea:focus {

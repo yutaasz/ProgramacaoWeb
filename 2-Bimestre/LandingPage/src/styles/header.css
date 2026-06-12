@@ -14,11 +14,11 @@
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgba(250, 249, 246, 0.98);
+  background-color: rgba(6, 9, 19, 0.95);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(197, 168, 90, 0.12);
+  border-bottom: 1px solid rgba(0, 136, 255, 0.15);
   padding-block: 1rem;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
   transition: all 0.3s ease;
 }
 
@@ -32,27 +32,19 @@
   font-family: var(--ff-serif);
   font-size: 1.45rem;
   font-weight: var(--fw-bold);
-  color: var(--text-color);
+  color: #FFFFFF;
   letter-spacing: 0.05em;
   text-decoration: none;
   position: relative;
   transition: opacity 0.3s ease;
 }
 
-.logo-text:hover {
-  opacity: 0.85;
+.logo-text span {
+  color: var(--primary-color);
 }
 
-.logo-text::after {
-  content: "";
-  position: absolute;
-  width: 4px;
-  height: 4px;
-  background-color: var(--primary-color);
-  bottom: 5px;
-  right: -8px;
-  border-radius: 50%;
-  box-shadow: 0 0 6px var(--primary-color);
+.logo-text:hover {
+  opacity: 0.85;
 }
 
 .nav-links {
@@ -64,7 +56,7 @@
 
 .nav-links a {
   font-family: var(--ff-sans);
-  color: #4B5563; /* Cinza grafite mais leve */
+  color: var(--second-text-color); /* Cinza azulado mais suave */
   font-weight: var(--fw-semibold);
   font-size: 0.72rem; /* Fonte menor e mais refinada */
   letter-spacing: 0.15em; /* Aumento no espaçamento de letras */
